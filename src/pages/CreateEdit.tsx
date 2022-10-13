@@ -31,6 +31,9 @@ export default function CreateEdit() {
           const text = (e.target.result)
           try{
             setAssociation(JSON.parse(text as string))
+            if(fileInputRef.current){
+              fileInputRef.current.value = "";
+            }
           }catch(e){}
         }
       };
