@@ -18,7 +18,12 @@ export default function ShowAdmin() {
             if(presenterWindow){
               (presenterWindow as Window).close();
             }
-          }catch(e){}
+            if(fileInputRef.current){
+              fileInputRef.current.value = "";
+            }
+          }catch(e){
+            console.log(e);
+          }
         }
       };
       reader.readAsText(e.files[0])
@@ -71,7 +76,7 @@ export default function ShowAdmin() {
                             <span className="w-4 mr-2 text-white pr-1">{row===5?'F':row}</span>
                             <button onMouseOver={()=>{sendMessageToPresenter('over', category, row, '')}} 
                             onClick={()=>{sendMessageToPresenter('click', category, row, association[category+row])}}
-                            className="w-full text-white p-10 text-center bg-indigo-500">{association[category+row]}</button>
+                            className="w-full text-white p-10 text-center bg-indigo-500 h-1">{association[category+row]}</button>
                           </div>)
                         })
                       }
