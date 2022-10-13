@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Index from './pages/CreateEdit';
 import CreateEdit from './pages/CreateEdit';
 import ShowAdmin from './pages/ShowAdmin';
 import ShowClient from './pages/ShowClient';
