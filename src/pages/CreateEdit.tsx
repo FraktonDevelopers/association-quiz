@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 export default function CreateEdit() {
   const [association, setAssociation] = useState<any>({});
   const fileInputRef = useRef<HTMLInputElement>(null)
-  const horizontalColumns = ['A', 'B', 'C', 'D', 'E'];
+  const horizontalColumns = ['A', 'B', 'C', 'D'];
   const verticalColumns = [1,2,3,4,5];
 
   const handleItemChange = (value: string, category :string, row: number) => {
@@ -26,7 +26,7 @@ export default function CreateEdit() {
   const read = (e: HTMLInputElement) => {
     if(e.files && e.files.length > 0){
       const reader = new FileReader()
-      reader.onload = async (e) => { 
+      reader.onload = async (e) => {
         if(e.target){
           const text = (e.target.result)
           try{
@@ -42,7 +42,7 @@ export default function CreateEdit() {
   }
 
   return (
-    <div className="Page-header">
+    <div className="Page-header px-4">
         <input
             ref={fileInputRef}
             className="invisible"
@@ -56,17 +56,17 @@ export default function CreateEdit() {
           <a className='bg-indigo-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150' href='/'>Back to Menu</a>
         </div>
 
-        <div className="flex">
+        <div className="mx-4 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:4 gap-3">
           {(horizontalColumns.map((category)=>{
               return (
-                    <div className="grid grid-cols-1 gap-4 pr-5">
-                      <span className="text-white ml-20">{category}</span>
+                    <div className="grid grid-cols-1 gap-4 px-5 border border-white border-opacity-50">
+                      <span className="text-white text-center">{category}</span>
                       <div>
                       {
                         verticalColumns.map((row) => {
-                          return (<div className="mb-5">
-                            <span className="text-white pr-1">{row===5?'F':row}</span>
-                            <input className="text-center" value={association[category+row]} onChange={(e) => handleItemChange(e.target.value, category, row)} type='text'></input>
+                          return (<div className="mb-5 flex items-center">
+                            <span className="text-white pr-2">{row===5?'F':row}</span>
+                            <input className="text-center w-full" value={association[category+row]} onChange={(e) => handleItemChange(e.target.value, category, row)} type='text'></input>
                           </div>)
                         })
                       }
@@ -75,8 +75,8 @@ export default function CreateEdit() {
               )
           }))}
         </div>
-        <div className="flex w-2/4 content-center">
-          <div className="mb-5 w-full">
+        <div className="flex w-2/4 mt-8">
+          <div className="mb-5 w-full flex items-center">
             <span className="text-white pr-1">Final:</span>
             <input className="w-full text-center" onChange={(e) => handleItemChange(e.target.value, 'FF', 0)} type='text'></input>
           </div>

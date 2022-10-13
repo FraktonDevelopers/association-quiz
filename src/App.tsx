@@ -5,13 +5,12 @@ function App() {
       <header className="App-header">
         <div className="grid grid-cols-1 gap-4">
           <p className='text-5xl font-bold uppercase mb-10'>Association Quiz</p>
-          
-          <a className='bg-indigo-500 p-10' href='/create-edit'>Create/Edit</a>
-          <a className='bg-indigo-500 p-10' href='/show-admin'>Present</a>
-          
-          <div className='mt-10'>
+
+          <a className='bg-[#7f00ff] p-10' href='/create-edit'>Create/Edit</a>
+          <a className='bg-[#7f00ff] p-10' href='/show-admin'>Present</a>
+
+          <div className='mt-10 flex flex-col items-center space-y-2'>
             <p className='text-xs font-bold uppercase content-center'>Powered by:</p>
-            <span  className='content-center'>
               <svg fill='ffffff' version="1.0" xmlns="http://www.w3.org/2000/svg"
               width="100" height="" viewBox="0 0 685.000000 207.000000"
               preserveAspectRatio="xMidYMid meet">
@@ -102,7 +101,6 @@ function App() {
               70 126 43 20 85 9 123 -31z"/>
               </g>
               </svg>
-            </span>
           </div>
         </div>
       </header>
