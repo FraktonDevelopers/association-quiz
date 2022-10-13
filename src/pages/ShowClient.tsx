@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function CreateEdit() {
   const [association, setAssociation] = useState<any>({});
-  const [currentOver, setCurrentOver] = useState(null);
+  const [currentOver, setCurrentOver] = useState("");
 
   const horizontalColumns = ['A', 'B', 'C', 'D', 'E'];
   const verticalColumns = [1,2,3,4,5];
@@ -13,6 +13,7 @@ export default function CreateEdit() {
       console.log(message);
       if(message.action === 'over'){
         setCurrentOver(message.category+message.row);
+        setTimeout(()=>{setCurrentOver("")}, 1000);
       }
       if(message.action === 'click'){
         let tempAssoc = JSON.parse(JSON.stringify(association));
@@ -37,7 +38,7 @@ export default function CreateEdit() {
                         verticalColumns.map((row) => {
                           return (<div className="flex items-center mb-4">
                             <span className="w-4 mr-2 text-white pr-1">{row===5?'F':row}</span>
-                            <button className="w-full text-white bg-indigo-500 p-10 text-center">{association[category+row]}</button>
+                            <button className={currentOver === category+row? 'w-full text-white bg-indigo-500 p-10 text-center' : 'w-full text-white bg-indigo-700 p-10 text-center'}>{association[category+row]}</button>
                           </div>)
                         })
                       }
