@@ -17,7 +17,7 @@ function App() {
               preserveAspectRatio="xMidYMid meet">
 
               <g transform="translate(0.000000,207.000000) scale(0.100000,-0.100000)"
-              fill="#000000" stroke="none">
+              fill="#ffffff" stroke="none">
               <path d="M5181 2059 c-175 -29 -343 -182 -395 -358 -18 -62 -21 -203 -5 -270
               89 -386 594 -518 867 -227 195 209 190 512 -12 711 -127 126 -277 173 -455
               144z m248 -204 c60 -33 109 -86 143 -154 19 -39 23 -62 23 -146 0 -120 -21

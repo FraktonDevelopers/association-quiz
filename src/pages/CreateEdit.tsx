@@ -49,6 +49,7 @@ export default function CreateEdit() {
         <div className="flex items-stretch mb-10">
           <button onClick={()=>{save()}} className='bg-indigo-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>Save</button>
           <button onClick={()=>{if(fileInputRef.current){fileInputRef.current.click()}}} className='bg-indigo-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>Load Existing</button>
+          <button onClick={()=>{setAssociation({})}} className='bg-indigo-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>Reset</button>
           <a className='bg-indigo-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150' href='/'>Back to Menu</a>
         </div>
 

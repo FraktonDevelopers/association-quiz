@@ -10,10 +10,9 @@ export default function CreateEdit() {
   window.addEventListener("message", (event)=>{
     try{
       const message = JSON.parse(event.data);
-      console.log(message);
       if(message.action === 'over'){
         setCurrentOver(message.category+message.row);
-        setTimeout(()=>{setCurrentOver("")}, 1000);
+        setTimeout(()=>{setCurrentOver("")}, 2000);
       }
       if(message.action === 'click'){
         let tempAssoc = JSON.parse(JSON.stringify(association));
@@ -38,7 +37,7 @@ export default function CreateEdit() {
                         verticalColumns.map((row) => {
                           return (<div className="flex items-center mb-4">
                             <span className="w-4 mr-2 text-white pr-1">{row===5?'F':row}</span>
-                            <button className={`w-full text-white p-10 text-center ${currentOver === category+row? 'bg-indigo-500' : 'bg-indigo-400'}`}>{association[category+row]}</button>
+                            <button className={`w-full text-white p-10 text-center ${currentOver === category+row ? 'bg-indigo-500' : 'bg-indigo-400'}`}>{association[category+row]}</button>
                           </div>)
                         })
                       }
@@ -50,7 +49,7 @@ export default function CreateEdit() {
         <div className="flex w-2/4 content-center">
           <div className="mb-5 w-full">
             <span className="text-white pr-1">Final:</span>
-            <button className="text-white bg-indigo-500 p-10 w-full text-center">{association['FF0']}</button>
+            <button className={`w-full text-white p-10 text-center ${currentOver === 'FF0'? 'bg-indigo-500' : 'bg-indigo-400'}`}>{association['FF0']}</button>
           </div>
         </div>
     </div>

@@ -52,13 +52,14 @@ export default function ShowAdmin() {
             type="file"
             onChange={(e) => {read(e.target)}}
         />
-        <div className="flex items-stretch mb-10">
+        <div className="flex items-stretch mb-5">
           <button onClick={()=>{if(fileInputRef.current){fileInputRef.current.click()}}} className='bg-indigo-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>Load Existing</button>
           <button onClick={()=>{openPresenterWindow()}} className='bg-indigo-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>Show Presenter Window</button>
+          <button onClick={()=>{setAssociation({})}} className='bg-indigo-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150'>Reset</button>
           <a className='bg-indigo-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150' href='/'>Back to Menu</a>
         </div>
 
-        <div className="flex">
+        <div className="w-full mx-4 grid grid-cols-5">
           {(horizontalColumns.map((category)=>{
               return (
                     <div className="grid grid-cols-1 gap-4 pr-5">
@@ -66,11 +67,11 @@ export default function ShowAdmin() {
                       <div>
                       {
                         verticalColumns.map((row) => {
-                          return (<div className="mb-5">
-                            <span className="text-white pr-1">{row===5?'F':row}</span>
+                          return (<div className="flex items-center mb-4">
+                            <span className="w-4 mr-2 text-white pr-1">{row===5?'F':row}</span>
                             <button onMouseOver={()=>{sendMessageToPresenter('over', category, row, '')}} 
                             onClick={()=>{sendMessageToPresenter('click', category, row, association[category+row])}}
-                            className="text-white bg-indigo-500 p-10 text-center">{association[category+row]}</button>
+                            className="w-full text-white p-10 text-center bg-indigo-500">{association[category+row]}</button>
                           </div>)
                         })
                       }
