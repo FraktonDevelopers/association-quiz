@@ -38,7 +38,7 @@ export default function CreateEdit() {
                         verticalColumns.map((row) => {
                           return (<div className="flex items-center mb-4">
                             <span className="w-4 mr-2 text-white pr-1">{row===5?'F':row}</span>
-                            <button className={currentOver === category+row? 'w-full text-white bg-indigo-500 p-10 text-center' : 'w-full text-white bg-indigo-700 p-10 text-center'}>{association[category+row]}</button>
+                            <button className={`w-full text-white p-10 text-center ${currentOver === category+row? 'bg-indigo-500' : 'bg-indigo-400'}`}>{association[category+row]}</button>
                           </div>)
                         })
                       }
