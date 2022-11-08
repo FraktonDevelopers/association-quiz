@@ -1,23 +1,72 @@
 import './App.css';
+import { useState } from 'react';
 
 function App() {
-  return (<div className="App">
+  const [hovered, setHovered] = useState(false);
+
+  const handleMouseOver = () => {
+    setHovered(true);
+  };
+
+  const handleMouseOut = () => {
+    setHovered(false);
+  };
+
+  return (
+    <div className="App">
       <header className="App-header">
         <div className="grid grid-cols-1 gap-4">
-          <p className='text-5xl font-bold uppercase mb-10'>Association Quiz</p>
+          <p className="text-5xl font-bold uppercase mb-10">Association Quiz</p>
 
-          <a className='bg-[#7f00ff] p-10' href='/create-edit'>Create/Edit</a>
-          <a className='bg-[#7f00ff] p-10' href='/show-admin'>Present</a>
+          <a className="bg-[#7f00ff] p-10" href="/create-edit">
+            Create/Edit
+          </a>
+          <a className="bg-[#7f00ff] p-10" href="/show-admin">
+            Present
+          </a>
+          <a
+            href="/how-to-play"
+            className="cursor-pointer flex justify-start items-center"
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              {" "}
+              <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />{" "}
+            </svg>
+            {hovered && (
+              <p className="font-light font-mono text-sm pl-2">
+                How to play?
+              </p>
+            )}
+          </a>
 
-          <div className='mt-10 flex flex-col items-center space-y-2'>
-            <p className='text-xs font-bold uppercase content-center'>Powered by:</p>
-              <svg fill='ffffff' version="1.0" xmlns="http://www.w3.org/2000/svg"
-              width="100" height="" viewBox="0 0 685.000000 207.000000"
-              preserveAspectRatio="xMidYMid meet">
-
-              <g transform="translate(0.000000,207.000000) scale(0.100000,-0.100000)"
-              fill="#ffffff" stroke="none">
-              <path d="M5181 2059 c-175 -29 -343 -182 -395 -358 -18 -62 -21 -203 -5 -270
+          <div className="mt-10 flex flex-col items-center space-y-2">
+            <p className="text-xs font-bold uppercase content-center">
+              Powered by:
+            </p>
+            <svg
+              fill="ffffff"
+              version="1.0"
+              xmlns="http://www.w3.org/2000/svg"
+              width="100"
+              height=""
+              viewBox="0 0 685.000000 207.000000"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <g
+                transform="translate(0.000000,207.000000) scale(0.100000,-0.100000)"
+                fill="#ffffff"
+                stroke="none"
+              >
+                <path
+                  d="M5181 2059 c-175 -29 -343 -182 -395 -358 -18 -62 -21 -203 -5 -270
               89 -386 594 -518 867 -227 195 209 190 512 -12 711 -127 126 -277 173 -455
               144z m248 -204 c60 -33 109 -86 143 -154 19 -39 23 -62 23 -146 0 -120 -21
               -172 -97 -247 -67 -65 -139 -91 -238 -86 -338 20 -422 491 -115 640 55 27 68
