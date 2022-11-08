@@ -37,15 +37,7 @@ export default function HowToPlay() {
           </li>
         ))}
       </ol>
-      <p>
-        How to{" "}
-        <a
-          href="/create-edit"
-          className="text-indigo-400 underline hover:text-indigo-500"
-        >
-          Present:
-        </a>
-      </p>
+      <p>How to Present:</p>
       <ol>
         {presentSteps.map((step, idx) => (
           <li key={idx} className="leading-7">
