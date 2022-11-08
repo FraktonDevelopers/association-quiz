@@ -1,6 +1,6 @@
 export default function HowToPlay() {
   const createSteps = [
-    "Clicking Create/Edit button.",
+    "Click Create/Edit button.",
     "You can start filling out the fields or you can upload a json file by clicking the Load Existing Button.",
     "In the first four input fields, you should type the words which associate somehow with the final world",
     "The final field is the field in which you should type the word associated with the final word of the A, B, C and D columns",
