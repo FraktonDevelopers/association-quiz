@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import CreateEdit from './pages/CreateEdit';
 import ShowAdmin from './pages/ShowAdmin';
 import ShowClient from './pages/ShowClient';
+import HowToPlay from "./pages/HowToPlay";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/show-client",
     element: <ShowClient />,
+  },
+  {
+    path: "/how-to-play",
+    element: <HowToPlay />,
   },
 ]);
 
